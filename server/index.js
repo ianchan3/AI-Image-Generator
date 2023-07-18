@@ -2,8 +2,8 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import database from './config/database.js';
-import { router as postRouter} from './routes/post.js';
-import { router as dalleRouter} from './routes/dalle.js';
+import { router as postRouter } from './routes/post.js';
+import { router as dalleRouter } from './routes/dalle.js';
 
 
 dotenv.config();
@@ -22,9 +22,9 @@ app.get('/', async (req, res) => {
 const startServer = async () => {
   try {
     database(process.env.MONGODB_URL)
-    app.listen(8080, () => console.log('Server has started on port 8080'))
+    app.listen(8080, () => console.log('Server started on port 8080'));
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
